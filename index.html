@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te Amo Na <3</title>
+
+    <style>
+
+        body {
+            background-color: rgb(255, 164, 214);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .painel {
+            background-color: white;
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #nao {
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin: 10px;
+        }
+
+        #sim {
+            height: 40px;
+            width: 60px;
+            background-color: rgb(3, 92, 0);
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .painel {
+                width: 90%;
+            }
+        }
+
+        /* Adicione posicionamento absoluto para o botão #nao */
+        #nao {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="painel">
+        <h1>Te amo minha vida</h1>
+        <h3>de: lu <3</h3>
+        <h3>para: na <3</h3>
+        <img src="https://gifman.net/wp-content/uploads/2019/06/ursinho-fofo-apaixonado.gif" alt="">
+        <h2>e você, me ama?</h2>
+        <a href="https://www.instagram.com/reel/Ctod_4uO4_U/?igshid=MzRIODBiNWFIZA%3D%3D"><button id="sim">Sim!</button></a>
+        <button onmouseover="fuja()" id="nao">Não!</button>
+    </div>
+
+    <script>
+        function fuja() {
+            var botaoNao = document.getElementById("nao");
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+            var maxX = larguraJanela - botaoNao.offsetWidth;
+            var maxY = alturaJanela - botaoNao.offsetHeight;
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+        }
+    </script>
+</body>
+</html>
